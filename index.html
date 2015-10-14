@@ -42,7 +42,7 @@
             <strong ng-hide="doughnut.fiddling" ng-click="doughnut.fiddling=true">{{ doughnut.flavor }}</strong>
           </td>
           <td ng-hide="doughnut.fiddling">
-            <button ng-hide="doughnut.fiddling" ng-click="dc.eatDoughnut(doughnut.id)">Eat</button>
+            <button ng-hide="doughnut.fiddling" ng-click="dc.delete(doughnut.id, $index)">Eat</button>
           </td>
 
           <td ng-if="doughnut.fiddling">

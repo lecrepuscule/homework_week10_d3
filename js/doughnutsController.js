@@ -49,16 +49,11 @@ function DoughnutsController(DoughnutFactory){
     })
   }
 
-  vm.eatDoughnut = function(id){
-    $http
-    .delete("http://api.doughnuts.ga/doughnuts/" + id)
+  vm.delete = function(id, index) {
+    DoughnutFactory.eatDoughnut(id)
     .then(function(response){
       console.log(response);
-      if (response.status === 200){
-        vm.all = vm.all.filter(function(doughnut){
-          return doughnut.id !== id;
-        });
-      };
+      vm.all.splice(index,1);
     });
   };
 

@@ -26,6 +26,20 @@ angular.module("doughnutApp")
         deferred.reject(error);
       })
       return deferred.promise;
+    },
+
+    eatDoughnut: function(id){
+    var deferred = $q.defer();
+    $http
+    .delete("http://api.doughnuts.ga/doughnuts/" + id)
+    .success(function(response){
+        console.log(response);
+        deferred.resolve(response);
+      })
+      .error(function(error){
+        deferred.reject(error);
+      })
+      return deferred.promise;
     }
 
 
